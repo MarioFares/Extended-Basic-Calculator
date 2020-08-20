@@ -27,6 +27,8 @@ import math
 import os
 import statistics
 import numpy
+from colorama import init, Fore
+init(autoreset=True)
 
 
 # noinspection PyUnusedLocal,PyUnresolvedReferences
@@ -49,9 +51,9 @@ class App(cmd.Cmd):
         try:
             ans = math.sin(math.radians(float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_cos(self, arg):
         """
@@ -62,9 +64,9 @@ class App(cmd.Cmd):
         try:
             ans = math.cos(math.radians(float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_tan(self, arg):
         """
@@ -75,9 +77,9 @@ class App(cmd.Cmd):
         try:
             ans = math.tan(math.radians(float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Inverse Trigonometric Functions
     def do_asin(self, arg):
@@ -89,9 +91,9 @@ class App(cmd.Cmd):
         try:
             ans = math.degrees(math.asin(float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_acos(self, arg):
         """
@@ -102,9 +104,9 @@ class App(cmd.Cmd):
         try:
             ans = math.degrees(math.acos(float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_atan(self, arg):
         """
@@ -115,9 +117,9 @@ class App(cmd.Cmd):
         try:
             ans = math.degrees(math.atan(float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Reciprocal Trigonometric Functions
     def do_sec(self, arg):
@@ -129,9 +131,9 @@ class App(cmd.Cmd):
         try:
             ans = (1 / math.cos(math.radians(float(arg))))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_csc(self, arg):
         """
@@ -142,9 +144,9 @@ class App(cmd.Cmd):
         try:
             ans = (1 / math.sin(math.radians(float(arg))))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_cot(self, arg):
         """
@@ -155,9 +157,9 @@ class App(cmd.Cmd):
         try:
             ans = (1 / math.tan(math.radians(float(arg))))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Logarithmic Functions
     def do_Log(self, arg):
@@ -169,9 +171,9 @@ class App(cmd.Cmd):
         try:
             ans = math.log10(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_ln(self, arg):
         """
@@ -182,9 +184,9 @@ class App(cmd.Cmd):
         try:
             ans = math.log(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_log(self, arg):
         """
@@ -197,9 +199,9 @@ class App(cmd.Cmd):
             array = parse(arg)
             ans = math.log(int(array[1]), int(array[0]))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Constants
     def do_pi(self, arg):
@@ -211,9 +213,9 @@ class App(cmd.Cmd):
         try:
             ans = math.pow(math.pi, (float(arg)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_exp(self, arg):
         """
@@ -224,9 +226,9 @@ class App(cmd.Cmd):
         try:
             ans = math.exp(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Statistics
     def do_mean(self, arg):
@@ -238,9 +240,9 @@ class App(cmd.Cmd):
         try:
             ans = statistics.fmean(float(i) for i in arg.split(','))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_median(self, arg):
         """
@@ -251,9 +253,9 @@ class App(cmd.Cmd):
         try:
             ans = statistics.median(float(i) for i in arg.split(','))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_mode(self, arg):
         """
@@ -264,9 +266,9 @@ class App(cmd.Cmd):
         try:
             ans = statistics.mode(float(i) for i in arg.split(','))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Polynomials
     def do_quad(self, arg):
@@ -277,14 +279,14 @@ class App(cmd.Cmd):
         """
         try:
             print("ax^2 + bx + c = 0")
-            a = float(input("a: "))
-            b = float(input("b: "))
-            c = float(input("c: "))
+            a = float(input(f"{Fore.BLUE}a: "))
+            b = float(input(f"{Fore.BLUE}b: "))
+            c = float(input(f"{Fore.BLUE}c: "))
             ans = numpy.roots([a, b, c])
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_cubic(self, arg):
         """
@@ -294,15 +296,15 @@ class App(cmd.Cmd):
         """
         try:
             print("ax^3 + bx^2 + cx + d = 0")
-            a = float(input("a: "))
-            b = float(input("b: "))
-            c = float(input("c: "))
-            d = float(input("d: "))
+            a = float(input(f"{Fore.BLUE}a: "))
+            b = float(input(f"{Fore.BLUE}b: "))
+            c = float(input(f"{Fore.BLUE}c: "))
+            d = float(input(f"{Fore.BLUE}d: "))
             ans = numpy.roots([a, b, c, d])
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_quart(self, arg):
         """
@@ -312,16 +314,16 @@ class App(cmd.Cmd):
         """
         try:
             print("ax^4 + bx^3 + cx^2 + dx + e = 0")
-            a = float(input("a: "))
-            b = float(input("b: "))
-            c = float(input("c: "))
-            d = float(input("d: "))
-            e = float(input("e: "))
+            a = float(input(f"{Fore.BLUE}a: "))
+            b = float(input(f"{Fore.BLUE}b: "))
+            c = float(input(f"{Fore.BLUE}c: "))
+            d = float(input(f"{Fore.BLUE}d: "))
+            e = float(input(f"{Fore.BLUE}e: "))
             ans = numpy.roots([a, b, c, d, e])
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_quint(self, arg):
         """
@@ -331,17 +333,17 @@ class App(cmd.Cmd):
         """
         try:
             print("ax^5 + bx^4 + cx^3 + dx^2 + ex + f = 0")
-            a = float(input("a: "))
-            b = float(input("b: "))
-            c = float(input("c: "))
-            d = float(input("d: "))
-            e = float(input("e: "))
-            f = float(input("f: "))
+            a = float(input(f"{Fore.BLUE}a: "))
+            b = float(input(f"{Fore.BLUE}b: "))
+            c = float(input(f"{Fore.BLUE}c: "))
+            d = float(input(f"{Fore.BLUE}d: "))
+            e = float(input(f"{Fore.BLUE}e: "))
+            f = float(input(f"{Fore.BLUE}f: "))
             ans = numpy.roots([a, b, c, d, e, f])
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Linear Algebra
     def do_sys2(self, arg):
@@ -351,21 +353,21 @@ class App(cmd.Cmd):
         Argument: no argument
         """
         try:
-            print("Eq 1: a1x + b1y = c1")
-            print("Eq 2: a2x + b2y = c2")
-            a1 = float(input("a1: "))
-            b1 = float(input("b1: "))
-            c1 = float(input("c1: "))
-            a2 = float(input("a2: "))
-            b2 = float(input("b2: "))
-            c2 = float(input("c2: "))
+            print(f"{Fore.GREEN}Eq 1: a1x + b1y = c1")
+            print(f"{Fore.GREEN}Eq 2: a2x + b2y = c2")
+            a1 = float(input(f"{Fore.BLUE}a1: "))
+            b1 = float(input(f"{Fore.BLUE}b1: "))
+            c1 = float(input(f"{Fore.BLUE}c1: "))
+            a2 = float(input(f"{Fore.BLUE}a2: "))
+            b2 = float(input(f"{Fore.BLUE}b2: "))
+            c2 = float(input(f"{Fore.BLUE}c2: "))
             first = numpy.array([[a1, b1], [a2, b2]])
             second = numpy.array([c1, c2])
             ans = numpy.linalg.solve(first, second)
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_sys3(self, arg):
         """
@@ -374,28 +376,28 @@ class App(cmd.Cmd):
         Argument: no argument
         """
         try:
-            print("Eq 1: a1x + b1y c1z = d1")
-            print("Eq 2: a2x + b2y c2z = d2")
-            print("Eq 3: a3x + b3y c3z = d3")
-            a1 = float(input("a1: "))
-            b1 = float(input("b1: "))
-            c1 = float(input("c1: "))
-            d1 = float(input("d1: "))
-            a2 = float(input("a2: "))
-            b2 = float(input("b2: "))
-            c2 = float(input("c2: "))
-            d2 = float(input("d2: "))
-            a3 = float(input("a3: "))
-            b3 = float(input("b3: "))
-            c3 = float(input("c3: "))
-            d3 = float(input("d3: "))
+            print(f"{Fore.GREEN}Eq 1: a1x + b1y c1z = d1")
+            print(f"{Fore.GREEN}Eq 2: a2x + b2y c2z = d2")
+            print(f"{Fore.GREEN}Eq 3: a3x + b3y c3z = d3")
+            a1 = float(input(f"{Fore.BLUE}a1: "))
+            b1 = float(input(f"{Fore.BLUE}b1: "))
+            c1 = float(input(f"{Fore.BLUE}c1: "))
+            d1 = float(input(f"{Fore.BLUE}d1: "))
+            a2 = float(input(f"{Fore.BLUE}a2: "))
+            b2 = float(input(f"{Fore.BLUE}b2: "))
+            c2 = float(input(f"{Fore.BLUE}c2: "))
+            d2 = float(input(f"{Fore.BLUE}d2: "))
+            a3 = float(input(f"{Fore.BLUE}a3: "))
+            b3 = float(input(f"{Fore.BLUE}b3: "))
+            c3 = float(input(f"{Fore.BLUE}c3: "))
+            d3 = float(input(f"{Fore.BLUE}d3: "))
             first = numpy.array([[a1, b1, c1], [a2, b2, c2], [a3, b3, c3]])
             second = numpy.array([d1, d2, d3])
             ans = numpy.linalg.solve(first, second)
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Power
     def do_pow(self, arg):
@@ -409,9 +411,9 @@ class App(cmd.Cmd):
             array = parse(arg)
             ans = math.pow(float(array[0]), float(array[1]))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_sqrt(self, arg):
         """
@@ -422,9 +424,9 @@ class App(cmd.Cmd):
         try:
             ans = math.sqrt(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_cbrt(self, arg):
         """
@@ -435,9 +437,9 @@ class App(cmd.Cmd):
         try:
             ans = math.pow(float(arg), (1 / 3))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Circles
     def do_carea(self, radius):
@@ -449,9 +451,9 @@ class App(cmd.Cmd):
         try:
             ans = math.pi * (float(radius) ** 2)
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_circum(self, radius):
         """
@@ -462,9 +464,9 @@ class App(cmd.Cmd):
         try:
             ans = math.pi * 2 * (float(radius))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Variables
     def do_set(self, arg):
@@ -478,8 +480,8 @@ class App(cmd.Cmd):
             if array[1] == "=" and float(array[2]):
                 self.variables[array[0]] = array[2]
         except Exception as e:
-            print("You made a syntax mistake.")
-            print(e)
+            print(f"{Fore.RED}You made a syntax mistake.")
+            print(f"{Fore.RED}{e}")
 
     def do_get(self, arg):
         """
@@ -487,13 +489,10 @@ class App(cmd.Cmd):
 
         Argument: variable
         """
-        try:
-            if arg in self.variables:
-                print(self.variables[arg])
-            else:
-                print("No such variable.")
-        except Exception as e:
-            print(e)
+        if arg in self.variables:
+            print(f"{Fore.GREEN}{self.variables[arg]}")
+        else:
+            print(f"{Fore.RED}No such variable.")
 
     # History
     def do_anshis(self, arg):
@@ -504,9 +503,9 @@ class App(cmd.Cmd):
         """
         try:
             for ans in self.ans_his:
-                print(ans)
+                print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_his(self, arg):
         """
@@ -516,9 +515,9 @@ class App(cmd.Cmd):
         """
         try:
             for command in self.history:
-                print(command)
+                print(f"{Fore.GREEN}{command}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Counting
     def do_comb(self, arg):
@@ -532,9 +531,9 @@ class App(cmd.Cmd):
             array = parse(arg)
             ans = math.comb(int(array[0]), int(array[1]))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_perm(self, arg):
         """
@@ -547,9 +546,9 @@ class App(cmd.Cmd):
             array = parse(arg)
             ans = math.perm(int(array(0)), int(array(1)))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_fact(self, arg):
         """
@@ -560,9 +559,9 @@ class App(cmd.Cmd):
         try:
             ans = math.factorial(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_prod(self, arg):
         """
@@ -573,9 +572,9 @@ class App(cmd.Cmd):
         try:
             ans = math.prod(float(i) for i in arg.split(','))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_rem(self, arg):
         """
@@ -588,9 +587,9 @@ class App(cmd.Cmd):
             array = parse(arg)
             ans = math.remainder(float(array[0]), float(array[1]))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_sum(self, arg):
         """
@@ -601,9 +600,9 @@ class App(cmd.Cmd):
         try:
             ans = math.fsum(float(i) for i in arg.split(','))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Conversion
     def do_degtorad(self, arg):
@@ -615,9 +614,9 @@ class App(cmd.Cmd):
         try:
             ans = math.radians(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_radtodeg(self, arg):
         """
@@ -628,9 +627,9 @@ class App(cmd.Cmd):
         try:
             ans = math.degrees(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_dectofrac(self, arg):
         """
@@ -641,9 +640,9 @@ class App(cmd.Cmd):
         try:
             ans = fractions.Fraction(float(arg))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Other
     def do_gcd(self, arg):
@@ -657,9 +656,9 @@ class App(cmd.Cmd):
             array = parse(arg)
             ans = math.gcd(int(array[0]), int(array[1]))
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_dist(self, arg):
         """
@@ -674,9 +673,9 @@ class App(cmd.Cmd):
             cod2 = (float(i) for i in (array[1]).split(','))
             ans = math.dist(cod1, cod2)
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     def do_eval(self, arg):
         """
@@ -685,12 +684,12 @@ class App(cmd.Cmd):
         Argument: no argument
         """
         try:
-            exp = input("Expression: ")
+            exp = input(f"{Fore.BLUE}Expression: ")
             ans = eval(exp)
             self.ans_his.append(ans)
-            print(ans)
+            print(f"{Fore.GREEN}{ans}")
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     # Console
     @staticmethod
@@ -700,7 +699,7 @@ class App(cmd.Cmd):
 
         Argument: no argument
         """
-        print("""
+        print(f"""{Fore.GREEN}
             Welcome to the Extended Basic Calculator.
             
             This console was designed for you to be able to use all the functions of a simple fx-95 calculator and more.
@@ -737,7 +736,7 @@ class App(cmd.Cmd):
             os.system('clear')
 
     @staticmethod
-    def do_exit(arg):
+    def do_quit(arg):
         """
         Exit console.
 
@@ -753,10 +752,10 @@ class App(cmd.Cmd):
         Argument: no argument
         """
         try:
-            path = input("Path: ")
+            path = input(f"{Fore.BLUE}Path: ")
             os.startfile(path)
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     @staticmethod
     def do_menu(arg):
@@ -765,20 +764,20 @@ class App(cmd.Cmd):
 
         Argument: no argument
         """
-        print("A few basic commands:")
-        print("To evaluate expression, type eval.")
-        print("To solve quadratic equation, type quad.")
-        print("To solve cubic equations, type cubic.")
-        print("To solve quartic equations (power 4), type quart.")
-        print("To solve quintic equations (power 5), type quint.")
-        print("To solve a System of 2 Unknowns, type sys2.")
-        print("To solve a System of 3 Unknowns, type sys3.")
-        print("To search for definitions, type dict.")
-        print("To see available options, type menu.")
-        print("To open a file or folder, type open.")
-        print("To see the current date and time, type date.")
-        print("To learn more about the console, type about.")
-        print("To exit program, type quit.")
+        print(f"{Fore.GREEN}A few basic commands:")
+        print(f"{Fore.GREEN}To evaluate expression, type eval.")
+        print(f"{Fore.GREEN}To solve quadratic equation, type quad.")
+        print(f"{Fore.GREEN}To solve cubic equations, type cubic.")
+        print(f"{Fore.GREEN}To solve quartic equations (power 4), type quart.")
+        print(f"{Fore.GREEN}To solve quintic equations (power 5), type quint.")
+        print(f"{Fore.GREEN}To solve a System of 2 Unknowns, type sys2.")
+        print(f"{Fore.GREEN}To solve a System of 3 Unknowns, type sys3.")
+        print(f"{Fore.GREEN}To search for definitions, type dict.")
+        print(f"{Fore.GREEN}To see available options, type menu.")
+        print(f"{Fore.GREEN}To open a file or folder, type open.")
+        print(f"{Fore.GREEN}To see the current date and time, type date.")
+        print(f"{Fore.GREEN}To learn more about the console, type about.")
+        print(f"{Fore.GREEN}To exit program, type quit.")
 
     def do_prompt(self, arg):
         """
@@ -789,7 +788,7 @@ class App(cmd.Cmd):
         try:
             self.prompt = arg
         except Exception as e:
-            print(e)
+            print(f"{Fore.RED}{e}")
 
     @staticmethod
     def do_date(arg):
@@ -798,7 +797,7 @@ class App(cmd.Cmd):
 
         Argument: no argument
         """
-        print(f"{datetime.datetime.today()}")
+        print(f"{Fore.GREEN}{datetime.datetime.today()}")
 
     @staticmethod
     def do_cal(arg):
@@ -807,7 +806,8 @@ class App(cmd.Cmd):
 
         Argument: no argument
         """
-        print(calendar.month(datetime.datetime.now().year, datetime.datetime.now().month))
+        print(Fore.GREEN)
+        print(f"{Fore.GREEN}{calendar.month(datetime.datetime.now().year, datetime.datetime.now().month)}")
 
     def precmd(self, line):
         """Append executed line to history."""
@@ -821,5 +821,6 @@ def parse(arg):
     return array
 
 
-app = App()
-app.cmdloop()
+if __name__ == "__main__":
+    app = App()
+    app.cmdloop()
