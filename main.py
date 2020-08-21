@@ -26,8 +26,14 @@ import fractions
 import math
 import os
 import statistics
-import numpy
-from colorama import init, Fore
+try:
+    import numpy
+    from colorama import init, Fore
+except ModuleNotFoundError as error:
+    print(f"{error}")
+    print("You cannot run this script without this module.")
+    input()
+    exit(1)
 init(autoreset=True)
 
 
